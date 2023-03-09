@@ -2,4 +2,4 @@
 
 # API protocols
 
-SOAP, REST, JSON-RPC, and others.
+SOAP, REST, RPC, and others.
