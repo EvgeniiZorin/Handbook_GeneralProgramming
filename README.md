@@ -53,11 +53,11 @@ SOAP, REST, RPC, and others.
 | AS2, AS3, AS4 | | |
 | SSH (secure shell protocol) | Network protocol for operating network services securely over an unsecured network. Used for remote login and command-line execution. | |
 
-| Program | Description |
-| - | - |
-| PuTTY | PuTTY is a free implementation of Telnet and SSH for Windows. |
-| WinSCP | WinSCP free, open-source SCP, SFTP, FTP for Windows. |
-| FileZilla | Like WinSCP but for macOS |
+| Program | Description | Notes |
+| - | - | - |
+| PuTTY | PuTTY is a free implementation of Telnet and SSH for Windows. | |
+| WinSCP | WinSCP free, open-source SCP, SFTP, FTP for Windows. | Just login using info of remote machine (IP, username, and pw), and now you can transfer files between your local machine and the remote machine. |
+| FileZilla | Like WinSCP but for macOS | |
 
 # OS
 
