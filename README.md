@@ -47,4 +47,15 @@ Before installing a Linux distro, you can check available popular distros at htt
 
 ## Windows
 
+**Environment variables (Powershell)**
 
+```py
+# List all environment variables
+Get-ChildItem Env:
+# Print a specific environment variable
+echo $Env:EMAIL_USER
+
+# Set an env var:
+[Environment]::SetEnvironmentVariable("variable_name","variable_value","User")
+### Then, reopen the terminal
+```
