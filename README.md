@@ -5,6 +5,7 @@
 - [Contents](#contents)
 - [Docker](#docker)
 - [API protocols](#api-protocols)
+- [Network Protocols](#network-protocols)
 - [OS](#os)
   - [Linux](#linux)
   - [Windows](#windows)
@@ -38,6 +39,25 @@ docker ps
 # API protocols
 
 SOAP, REST, RPC, and others.
+
+# Network Protocols
+
+
+| Protocol | Description | Notes | 
+| - | - | - |
+| FTP (file transfer protocol) | The original ftp | Sends unencrypted data. |
+| FTPS (ftp over SSL/TLS) | | |
+| SFTP (ftp over ssh) | | |
+| SCP (secure copy protocol) | Network protocol that supports file transfers. |  |
+| HTTP & HTTPS | | |
+| AS2, AS3, AS4 | | |
+| SSH (secure shell protocol) | Network protocol for operating network services securely over an unsecured network. Used for remote login and command-line execution. | |
+
+| Program | Description |
+| - | - |
+| PuTTY | PuTTY is a free implementation of Telnet and SSH for Windows. |
+| WinSCP | WinSCP free, open-source SCP, SFTP, FTP for Windows. |
+| FileZilla | Like WinSCP but for macOS |
 
 # OS
 
