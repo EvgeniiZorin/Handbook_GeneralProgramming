@@ -59,3 +59,12 @@ echo $Env:EMAIL_USER
 [Environment]::SetEnvironmentVariable("variable_name","variable_value","User")
 ### Then, reopen the terminal
 ```
+**Environment variables (GUI)**
+
+You can set environment variable in GUI by following the following steps:
+- Win+R
+- `sysdm.cpl`
+- "Advanced" tab
+- "Environment Variables"
+- "New"
+- Define a variable
