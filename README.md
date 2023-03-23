@@ -5,6 +5,9 @@
 - [Contents](#contents)
 - [Docker](#docker)
 - [API protocols](#api-protocols)
+- [OS](#os)
+  - [Linux](#linux)
+  - [Windows](#windows)
 
 
 # Docker
@@ -35,3 +38,13 @@ docker ps
 # API protocols
 
 SOAP, REST, RPC, and others.
+
+# OS
+
+## Linux
+
+Before installing a Linux distro, you can check available popular distros at https://distrowatch.com/ and create a bootable USB at https://rufus.ie/en/. 
+
+## Windows
+
+
