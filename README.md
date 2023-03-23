@@ -42,6 +42,7 @@ SOAP, REST, RPC, and others.
 
 # Network Protocols
 
+To find out my IP, run `ip r` in bash terminal. Your IP will be the one after "src".
 
 | Protocol | Description | Notes | 
 | - | - | - |
@@ -51,13 +52,39 @@ SOAP, REST, RPC, and others.
 | SCP (secure copy protocol) | Network protocol that supports file transfers. |  |
 | HTTP & HTTPS | | |
 | AS2, AS3, AS4 | | |
-| SSH (secure shell protocol) | Network protocol for operating network services securely over an unsecured network. Used for remote login and command-line execution. | |
+| SSH (secure socket shell) | Network protocol that provides means of encrypted communcations between your PC and a server. Used for remote login and command-line execution. | |
 
+**SSH**
+```bash
+# Connect via ssh
+ssh <username>@<server IP>
+```
+
+If you can't connect, on your server use command `sudo service ssh status`. If it says "unit ssh.service could not be found", run the following command: `sudo apt-get install openssh-server`.
+
+**SCP**
+
+Importantly, remember that to do scp you DO NOT loging via ssh! Just write the scp commands directly in the console without an ssh command.
+```bash
+# Download file from server
+scp <username>@<ip>:<full path of file> <address on local machine or current dir>
+# Add flag -r after scp if you want to download a directory
+# Example:
+scp evgenii_zorin@123.456.789.0:/home/evgenii_zorin/Desktop/example.txt /mnt/c/Users/evgen/Desktop
+
+# Upload file onto server
+scp <path from where upload> <username>@<ip>:<full_path to where upload>
+# Example:
+scp /mnt/c/Users/evgen/Desktop/example.txt evgenii_zorin@123.456.789.0:/home/evgenii_zorin/Desktop
+```
+
+There are also some GUI applications that emulate the abovementioned functionalities:
 | Program | Description | Notes |
 | - | - | - |
 | PuTTY | PuTTY is a free implementation of Telnet and SSH for Windows. | |
 | WinSCP | WinSCP free, open-source SCP, SFTP, FTP for Windows. | Just login using info of remote machine (IP, username, and pw), and now you can transfer files between your local machine and the remote machine. |
 | FileZilla | Like WinSCP but for macOS | |
+
 
 # OS
 
