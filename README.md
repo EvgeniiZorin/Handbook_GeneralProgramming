@@ -1,15 +1,15 @@
 # Handbook_GeneralProgramming
 
-# Contents
-- [Handbook General Programming](#handbook_generalprogramming)
-- [Contents](#contents)
+- [Handbook_GeneralProgramming](#handbook-generalprogramming)
 - [Docker](#docker)
+- [Archives](#archives)
 - [API protocols](#api-protocols)
 - [Network Protocols](#network-protocols)
 - [OS](#os)
-  - [Linux](#linux)
-  - [Windows](#windows)
+  * [Linux](#linux)
+  * [Windows](#windows)
 
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Docker
 
