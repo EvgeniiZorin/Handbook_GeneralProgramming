@@ -2,7 +2,6 @@
 
 - [Handbook_GeneralProgramming](#handbook-generalprogramming)
 - [Docker](#docker)
-- [Archives](#archives)
 - [API protocols](#api-protocols)
 - [Network Protocols](#network-protocols)
 - [OS](#os)
@@ -35,17 +34,6 @@ docker run -p 8000:8000 python-fastapi
 docker ps
 ```
 
-# Archives
-
-Main types of archives: `.gz`, `.tar.gz`, `.zip`, `.7z`
-
-| Archive | Description |
-| - | - |
-| `.gz` | **Archive**. Archives <u>only individual files</u>, never a directory. |
-| `.tar` | **Container**. Utility `tar` containerises a folder. Usually, that container is then archived with `gzip` to get an **archive** `.tar.gz` | 
-| `.zip` | **Archive**.  |
-| `.7z` |  |
-| `.tgz` | tar gzip |
 
 
 # API protocols
