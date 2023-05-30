@@ -25,8 +25,10 @@ To provide a clearer explanation, let's consider an example: Imagine you have tr
 **Use case 1: simple python script**
 ```py
 # Build an image
+# Here, `-t` is to specify name, `.` to specify current directory for the build
 docker build -t python-imdb .
 # Run
+# `--name` if you want to specify run name
 docker run python-imdb
 # Run in interactive mode
 docker run -t -i python-imdb
