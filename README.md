@@ -24,7 +24,7 @@ To provide a clearer explanation, let's consider an example: Imagine you have tr
 
 **Use case 1: simple python script**
 ```py
-# Create
+# Build an image
 docker build -t python-imdb .
 # Run
 docker run python-imdb
