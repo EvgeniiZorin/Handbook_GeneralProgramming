@@ -24,46 +24,53 @@ To provide a clearer explanation, let's consider an example: Imagine you have tr
 
 ---
 
-Commands:
+## Commands:
 
+Build an image
+- `-t` specifies name
+- `.` specifies current directory for the build
+- image name can be `<name>` or with a tag, which is useful for distinguishing newer images from older ones: `<name:tag>`, e.g. `main-app:0.1`.
 ```powershell
-# Build an image
-# Here, `-t` is to specify name, `.` to specify current directory for the build
-docker build -t python-imdb .
-# The -t is to name and tag an image with the name:tag syntax. The name of the image is node-app and the tag is 0.1. 
-# The tag is highly recommended when building Docker images. If you don't specify a tag, the tag will default to latest and it becomes more difficult to distinguish newer images from older ones.
+docker build -t <name> .
 docker build -t node-app:0.1 .
-
-# Run 
-# run a container from an image
-docker run python-imdb
-docker run python-imdb --name <container_name_to_specify> # if you want to specify running container name
-# Run in interactive mode
-docker run -t -i python-imdb
-# If you want to run a FastAPI (e.g. flask), you need to specify port
-# *Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*
-docker run -p 8000:8000 --name container-name-custom node-app:0.1
-# If you want the container to run in the background (not tied to the terminal's session), you need to specify the -d flag.
-docker run -p 4000:80 --name my-app -d node-app:0.1
-
-# Logs
-# You don't have to write the entire container ID, as long as the initial characters uniquely identify the container. For example, you can execute docker logs 17b if the container ID is 17bcaca6f
-docker logs [container_id]
-# `-f` if If you want to follow the log's output as the container is running
 ```
 
-Stop docker container
-```powershell
-docker stop <container_id>
-```
-
-
+Image - other
 ```powershell
 # List images available
 docker images
-# List running containers
+# Download docker image without running it
+# If you want to remove an image, first make sure that no containers for that image are currently running
+docker rmi <image_name>
+```
+
+Run a container from an image
+- `--name` allows you to specify a custom name for the container
+- If you want to run a FastAPI (e.g. Flask), you need to specify port (*Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*)
+- `-d` flat if you want the container to run in the background and not tied to the currently-opened terminal's session
+```powershell
+docker run python-imdb
+docker run python-imdb --name <containerNameThatYouWant>
+docker run -p 8000:8000 --name containerNameCustom node-app:0.1
+docker run -p 4000:80 --name my-app -d node-app:0.1
+```
+
+Container - others
+```powershell
+# view running containers
 docker ps
 docker ps -a # list all containers, even ones that don't run
+# Stop docker container
+docker stop <container_id>
+# Remove a container
+docker rm <containerName>
+```
+
+Logs
+```powershell
+# You don't have to write the entire container ID, as long as the initial characters uniquely identify the container. For example, you can execute docker logs 17b if the container ID is 17bcaca6f
+docker logs [container_id]
+# `-f` if If you want to follow the log's output as the container is running
 ```
 
 
