@@ -41,11 +41,13 @@ docker run -p 8000:8000 python-fastapi
 
 *Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*
 
-```py
+```powershell
+# List images available
+docker images
 # List running containers
 docker ps
+docker ps -a # list all containers, even ones that don't run
 ```
-
 
 
 # API protocols
