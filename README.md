@@ -18,28 +18,45 @@ To provide a clearer explanation, let's consider an example: Imagine you have tr
 
 `Dockerfile`: file containing all the necessary instructions to build an image. 
 
-`Image`: This refers to the collection of all your software in one single place, for instance, Python, Tensorflow, etc. 
+`Image`: Collection of all the required software in one place (e.g. Python, Tensorflow, etc); a package / template. It is used to create one or more containers.  
 
-`Container`: This a running instance of an image. Images by themselves don't do much aside from saving the information of your code and its dependencies. You need to run a container out of them to actually run the code within. Containers are usually meant to perform a single task but they can be used as runtimes to run software that you haven't installed.
+`Container`: Running instance of an image (the same or different images). Images by themselves don't do much aside from saving the information of your code and its dependencies. You need to run a container out of them to actually run the code within. Containers are usually meant to perform a single task but they can be used as runtimes to run software that you haven't installed.
 
-**Use case 1: simple python script**
-```py
+---
+
+Commands:
+
+```powershell
 # Build an image
 # Here, `-t` is to specify name, `.` to specify current directory for the build
 docker build -t python-imdb .
-# Run
-# `--name` if you want to specify run name
+# The -t is to name and tag an image with the name:tag syntax. The name of the image is node-app and the tag is 0.1. 
+# The tag is highly recommended when building Docker images. If you don't specify a tag, the tag will default to latest and it becomes more difficult to distinguish newer images from older ones.
+docker build -t node-app:0.1 .
+
+# Run 
+# run a container from an image
 docker run python-imdb
+docker run python-imdb --name <container_name_to_specify> # if you want to specify running container name
 # Run in interactive mode
 docker run -t -i python-imdb
+# If you want to run a FastAPI (e.g. flask), you need to specify port
+# *Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*
+docker run -p 8000:8000 --name container-name-custom node-app:0.1
+# If you want the container to run in the background (not tied to the terminal's session), you need to specify the -d flag.
+docker run -p 4000:80 --name my-app -d node-app:0.1
+
+# Logs
+# You don't have to write the entire container ID, as long as the initial characters uniquely identify the container. For example, you can execute docker logs 17b if the container ID is 17bcaca6f
+docker logs [container_id]
+# `-f` if If you want to follow the log's output as the container is running
 ```
 
-**Use case 2: running a FastAPI (or e.g. Flask)**
-```py
-docker run -p 8000:8000 python-fastapi
+Stop docker container
+```powershell
+docker stop <container_id>
 ```
 
-*Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*
 
 ```powershell
 # List images available
