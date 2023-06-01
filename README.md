@@ -53,13 +53,17 @@ docker run python-imdb
 docker run python-imdb --name <containerNameThatYouWant>
 docker run -p 8000:8000 --name containerNameCustom node-app:0.1
 docker run -p 4000:80 --name my-app -d node-app:0.1
+# If you want to work with terminal input for docker container, run in interactive mode and enable terminal
+docker run -it img1
 
-# view running containers
+### View containers
+# View running containers
 docker ps
 docker ps -a # list all containers, even ones that don't run
-# Stop docker container
+docker inspect contName # get detailed info about a container
+### Stop docker container
 docker stop <container_id>
-# Remove container(s)
+### Remove container(s)
 docker rm <containerName>
 docker rm id1 id2 # Remove multiple containers
 ```
