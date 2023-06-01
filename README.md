@@ -16,11 +16,19 @@ Docker is a remarkable tool that enables you to transport your software together
 
 To provide a clearer explanation, let's consider an example: Imagine you have trained a Deep Learning model utilizing Python and various libraries like Tensorflow or JAX. To accomplish this, you created a virtual environment on your personal computer. Everything functions smoothly, but now you desire to share this model with a colleague who lacks Python installation, let alone any of the obligatory libraries. In a pre-Docker era, your colleague would have to install all the aforementioned software simply to execute your model. However, by installing Docker, you can distribute a Docker image containing all your software, which will suffice entirely.
 
-`Dockerfile`: file containing all the necessary instructions to build an image. 
+`Dockerfile`: file containing all the necessary instructions to build an image. A text file written in the `INSTRUCTION ARGUMENT` format. 
+
+Instructions:
+- `FROM`: start from base OS or another image. Has to be the 1st instruction
+- `RUN`: install dependencies
+- `COPY`: copies files from local system onto docker image
+- `ENTRYPOINT`, `CMD`: run commands
 
 `Image`: Collection of all the required software in one place (e.g. Python, Tensorflow, etc); a package / template. It is used to create one or more containers.  
 
 `Container`: Running instance of an image (the same or different images). Images by themselves don't do much aside from saving the information of your code and its dependencies. You need to run a container out of them to actually run the code within. Containers are usually meant to perform a single task but they can be used as runtimes to run software that you haven't installed.
+- A container lives only as long as the process inside it is alive / running
+- Container exists when the process inside it stops / crashes
 
 ---
 
