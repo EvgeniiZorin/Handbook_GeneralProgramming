@@ -35,9 +35,9 @@ To provide a clearer explanation, let's consider an example: Imagine you have tr
 docker build -t <name> .
 docker build -t node-app:0.1 .
 
-# List images available 
+### List images 
 docker images
-# Download docker image without running it
+### Remove image
 # If you want to remove an image, first make sure that no containers for that image are currently running
 docker rmi <image_name>
 docker rmi img1 img2 # Remove multiple images
@@ -59,20 +59,30 @@ docker run -it img1
 ### View containers
 # View running containers
 docker ps
-docker ps -a # list all containers, even ones that don't run
-docker inspect contName # get detailed info about a container
+# List all containers, even the ones that are not running
+docker ps -a
+# Get detailed info about a container
+docker inspect contName
+# Get log of a container. `-f` if you want to follow the log's output as the container is running
+docker logs [container_id]
 ### Stop docker container
 docker stop <container_id>
 ### Remove container(s)
 docker rm <containerName>
-docker rm id1 id2 # Remove multiple containers
+# Remove multiple containers
+docker rm id1 id2
 ```
 
-Logs
+**Publish image**
 ```powershell
-# You don't have to write the entire container ID, as long as the initial characters uniquely identify the container. For example, you can execute docker logs 17b if the container ID is 17bcaca6f
-docker logs [container_id]
-# `-f` if If you want to follow the log's output as the container is running
+### Make img available on public registry (Docker registry / hub)
+docker push imgname
+### Manually export Docker image (so that you can send it privately)
+# 1. Build your image
+# 2. Export image as .tar archive
+docker save my-image:latest > my-img.tar
+# 3. Use exported image
+docker load < my-img.tar
 ```
 
 
