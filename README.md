@@ -26,44 +26,42 @@ To provide a clearer explanation, let's consider an example: Imagine you have tr
 
 ## Commands:
 
-Build an image
-- `-t` specifies name
-- `.` specifies current directory for the build
-- image name can be `<name>` or with a tag, which is useful for distinguishing newer images from older ones: `<name:tag>`, e.g. `main-app:0.1`.
+**Image**
 ```powershell
+### Build an image
+# - `-t` specifies name
+# - `.` specifies current directory for the build
+# - image name can be `<name>` or with a tag, which is useful for distinguishing newer images from older ones: `<name:tag>`, e.g. `main-app:0.1`.
 docker build -t <name> .
 docker build -t node-app:0.1 .
-```
 
-Image - other
-```powershell
-# List images available
+# List images available 
 docker images
 # Download docker image without running it
 # If you want to remove an image, first make sure that no containers for that image are currently running
 docker rmi <image_name>
+docker rmi img1 img2 # Remove multiple images
 ```
 
-Run a container from an image
-- `--name` allows you to specify a custom name for the container
-- If you want to run a FastAPI (e.g. Flask), you need to specify port (*Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*)
-- `-d` flat if you want the container to run in the background and not tied to the currently-opened terminal's session
+**Container**
 ```powershell
+### Run container
+# - `--name` allows you to specify a custom name for the container
+# - If you want to run a FastAPI (e.g. Flask), you need to specify port (*Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*)
+# - `-d` flat if you want the container to run in the background and not tied to the currently-opened terminal's session
 docker run python-imdb
 docker run python-imdb --name <containerNameThatYouWant>
 docker run -p 8000:8000 --name containerNameCustom node-app:0.1
 docker run -p 4000:80 --name my-app -d node-app:0.1
-```
 
-Container - others
-```powershell
 # view running containers
 docker ps
 docker ps -a # list all containers, even ones that don't run
 # Stop docker container
 docker stop <container_id>
-# Remove a container
+# Remove container(s)
 docker rm <containerName>
+docker rm id1 id2 # Remove multiple containers
 ```
 
 Logs
