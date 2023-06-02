@@ -65,10 +65,13 @@ CMD ["python", "main.py"]
 ## Commands:
 
 **Image**
+
+Flags for `docker build`:
+- `-t`: specify name of the image to be created
+- `.`: specifies current directory for the build
+
 ```powershell
 ### Build an image
-# - `-t` specifies name
-# - `.` specifies current directory for the build
 # - image name can be `<name>` or with a tag, which is useful for distinguishing newer images from older ones: `<name:tag>`, e.g. `main-app:0.1`.
 docker build -t <name> .
 docker build -t node-app:0.1 .
