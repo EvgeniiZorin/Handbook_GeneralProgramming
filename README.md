@@ -69,11 +69,16 @@ docker rmi img1 img2 # Remove multiple images
 ```
 
 **Container**
+
+Flags for `docker run`:
+- `-d`: run the container in the background and not tied to the currently-opened terminal session
+- `--rm`: Delete this container after stopping running it. This is to avoid having to manually delete the container
+- `-p`: performs port mapping
+
 ```powershell
 ### Run container
 # - `--name` allows you to specify a custom name for the container
 # - If you want to run a FastAPI (e.g. Flask), you need to specify port (*Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*)
-# - `-d` flat if you want the container to run in the background and not tied to the currently-opened terminal's session
 docker run python-imdb
 docker run python-imdb --name <containerNameThatYouWant>
 docker run -p 8000:8000 --name containerNameCustom node-app:0.1
