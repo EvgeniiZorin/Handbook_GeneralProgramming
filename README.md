@@ -37,6 +37,19 @@ ENTRYPOINT ["sleep"]
 CMD ["5"]
 ```
 
+Example Dockerfile:
+```txt
+FROM python:3.10.10
+
+ADD main.py .
+
+ADD requirements.txt .
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "main.py"]
+```
+
 ## Image
 
 `Image`: Collection of all the required software in one place (e.g. Python, Tensorflow, etc); a package / template. It is used to create one or more containers.  
