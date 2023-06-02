@@ -82,6 +82,9 @@ docker images
 # If you want to remove an image, first make sure that no containers for that image are currently running
 docker rmi <image_name>
 docker rmi img1 img2 # Remove multiple images
+
+### Remove <none> images
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
 
 **Container**
