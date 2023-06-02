@@ -38,7 +38,7 @@ CMD ["5"]
 ```
 
 Example Dockerfile:
-```txt
+```dockerfile
 FROM python:3.10.10
 
 ADD main.py .
