@@ -134,6 +134,10 @@ docker save my-image:latest > my-img.tar
 docker load < my-img.tar
 ```
 
+You can also create many containers from one Dockerfile using docker-compose:
+```powershell
+docker-compose up -d
+```
 
 # API protocols
 
