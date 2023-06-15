@@ -54,18 +54,6 @@ CMD ["python", "main.py"]
 
 `Image`: Collection of all the required software in one place (e.g. Python, Tensorflow, etc); a package / template. It is used to create one or more containers.  
 
-## Container
-
-`Container`: Running instance of an image (the same or different images). Images by themselves don't do much aside from saving the information of your code and its dependencies. You need to run a container out of them to actually run the code within. Containers are usually meant to perform a single task but they can be used as runtimes to run software that you haven't installed.
-- A container lives only as long as the process inside it is alive / running
-- Container exists when the process inside it stops / crashes
-
----
-
-## Commands:
-
-**Image**
-
 Flags for `docker build`:
 - `-t`: specify name of the image to be created
 - `.`: specifies current directory for the build
@@ -87,7 +75,24 @@ docker rmi img1 img2 # Remove multiple images
 docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
 
-**Container**
+**Publish image**
+```powershell
+### Make img available on public registry (Docker registry / hub)
+docker push imgname
+### Manually export Docker image (so that you can send it privately)
+# 1. Build your image
+# 2. Export image as .tar archive
+docker save my-image:latest > my-img.tar
+# 3. Use exported image
+docker load < my-img.tar
+```
+
+
+## Container
+
+`Container`: Running instance of an image (the same or different images). Images by themselves don't do much aside from saving the information of your code and its dependencies. You need to run a container out of them to actually run the code within. Containers are usually meant to perform a single task but they can be used as runtimes to run software that you haven't installed.
+- A container lives only as long as the process inside it is alive / running
+- Container exists when the process inside it stops / crashes
 
 Flags for `docker run`:
 - `-d`: run the container in the background and not tied to the currently-opened terminal session
@@ -120,18 +125,6 @@ docker stop <container_id>
 docker rm <containerName>
 # Remove multiple containers
 docker rm id1 id2
-```
-
-**Publish image**
-```powershell
-### Make img available on public registry (Docker registry / hub)
-docker push imgname
-### Manually export Docker image (so that you can send it privately)
-# 1. Build your image
-# 2. Export image as .tar archive
-docker save my-image:latest > my-img.tar
-# 3. Use exported image
-docker load < my-img.tar
 ```
 
 You can also create many containers from one Dockerfile using docker-compose:
