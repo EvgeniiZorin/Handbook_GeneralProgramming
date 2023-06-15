@@ -127,6 +127,14 @@ docker rm <containerName>
 docker rm id1 id2
 ```
 
+You can connect to terminal of the container's environment:
+```powershell
+# Connect to container environment
+docker exec -it <cont_id> bash
+# Disconnect
+exit
+```
+
 You can also create many containers from one Dockerfile using docker-compose:
 ```powershell
 docker-compose up -d
