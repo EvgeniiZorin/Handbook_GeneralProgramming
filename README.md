@@ -100,7 +100,7 @@ Flags for `docker run`:
 - `-p`: performs port mapping
 
 ```powershell
-### Run container
+### Run container from image
 # - `--name` allows you to specify a custom name for the container
 # - If you want to run a FastAPI (e.g. Flask), you need to specify port (*Note for ports: you specify 8000 & 0.0.0.0, however, localhost opens at 127.0.0.1:8000*)
 docker run python-imdb
@@ -109,18 +109,27 @@ docker run -p 8000:8000 --name containerNameCustom node-app:0.1
 docker run -p 4000:80 --name my-app -d node-app:0.1
 # If you want to work with terminal input for docker container, run in interactive mode and enable terminal
 docker run -it img1
+### Resume run of a stopped container
+docker start <container_id>
 
 ### View containers
 # View running containers
-docker ps
+docker ps # add -q to get a more standardised output, one container per line
 # List all containers, even the ones that are not running
 docker ps -a
 # Get detailed info about a container
 docker inspect contName
 # Get log of a container. `-f` if you want to follow the log's output as the container is running
 docker logs [container_id]
+
 ### Stop docker container
+# Stop one
 docker stop <container_id>
+# Stop many 
+docker stop <container_id1> <container_id2>
+# Stop all runnning containers
+docker ps -q | xargs docker stop
+
 ### Remove container(s)
 docker rm <containerName>
 # Remove multiple containers
