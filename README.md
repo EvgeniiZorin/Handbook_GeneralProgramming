@@ -64,6 +64,9 @@ Flags for `docker build`:
 docker build -t <name> .
 docker build -t node-app:0.1 .
 
+### clear cache
+docker builder prune
+
 ### List images 
 docker images
 ### Remove image
