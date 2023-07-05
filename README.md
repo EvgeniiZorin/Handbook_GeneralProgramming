@@ -147,11 +147,44 @@ docker exec -it <cont_id> bash
 exit
 ```
 
+## docker-compose up
+
 You can also create many containers from one Dockerfile using docker-compose:
+- Run the same script many times with different passable parameters / arguments;
+- Run different scripts within the same program directory that are responsible for doing different things. 
+
+This is what a `docker-compose.yaml` file looks like:
+```yaml
+version: "3"
+services:
+  website: # name of the 1st container that you can specify
+    image: nginx
+    
+    ports:
+      - "8081:80"
+    restart: always
+  website2: # name of the 2nd container
+    image: nginx
+    ports:
+      - "8082:80"
+    restart: always
+```
+
+And here are some commands to run docker-compose:
+
 ```powershell
 docker-compose up -d
 ### Force rebuild
 docker-compose up -d --build
+
+### check containers within the docker-compose
+docker-compose ps
+
+### Stop containers
+docker-compose stop
+
+### Remove all containers associated with the images in docker-compose (but not images themselves)
+docker-compose down
 ```
 
 # API protocols
