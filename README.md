@@ -151,7 +151,7 @@ You can also create many containers from one Dockerfile using docker-compose:
 ```powershell
 docker-compose up -d
 ### Force rebuild
-docker-compose up --build
+docker-compose up -d --build
 ```
 
 # API protocols
