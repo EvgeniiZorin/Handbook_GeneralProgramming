@@ -141,10 +141,15 @@ docker rm id1 id2
 
 You can connect to terminal of the container's environment:
 ```powershell
-# Connect to container environment
+### Connect to container environment,
+### where you can browse the environment with termianl
 docker exec -it <cont_id> bash
 # Disconnect
 exit
+
+### Connect to container's terminal with stdinput
+### so if your code has `input` requirements, you can provide it from the terminal from this command
+docker attach [OPTIONS] <CONTAINER_ID>
 ```
 
 ## docker-compose up
