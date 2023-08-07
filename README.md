@@ -200,15 +200,17 @@ SOAP, REST, RPC, and others.
 
 To find out my IP, run `ip r` in bash terminal. Your IP will be the one after "src".
 
-| Protocol | Description | Notes | 
-| - | - | - |
-| FTP (file transfer protocol) | The original ftp | Sends unencrypted data. |
-| FTPS (ftp over SSL/TLS) | | |
-| SFTP (ftp over ssh) | | |
-| SCP (secure copy protocol) | Network protocol that supports file transfers. |  |
-| HTTP & HTTPS | | |
-| AS2, AS3, AS4 | | |
-| SSH (secure socket shell) | Network protocol that provides means of encrypted communcations between your PC and a server. Used for remote login and command-line execution. | |
+| Protocol | Description | Type | Notes | 
+| - | - | - | - |
+| FTP (file transfer protocol) | The original ftp | File | Sends unencrypted data. |
+| FTPS (ftp over SSL/TLS) | | | |
+| SFTP (ftp over ssh) | | | |
+| SCP (secure copy protocol) | Network protocol that supports file transfers. | File |  |
+| HTTP & HTTPS | | | |
+| AS2, AS3, AS4 | | | |
+| SSH (secure socket shell) | Network protocol that provides means of encrypted communcations between your PC and a server. Used for remote login and command-line execution. | | |
+| RTSP | | Videos | |
+
 
 **SSH**
 ```bash
