@@ -3,7 +3,7 @@
 - [Handbook_GeneralProgramming](#handbook-generalprogramming)
 - [Docker](#docker)
 - [API protocols](#api-protocols)
-- [Network Protocols](#network-protocols)
+- [Communication Protocols](#communication-protocols)
 - [OS](#os)
   * [Linux](#linux)
   * [Windows](#windows)
@@ -196,21 +196,46 @@ docker-compose down
 
 SOAP, REST, RPC, and others.
 
-# Network Protocols
+# Communication Protocols
 
-To find out my IP, run `ip r` in bash terminal. Your IP will be the one after "src".
+Capas del modelo OSI.
 
-| Protocol | Description | Type | Notes | 
-| - | - | - | - |
-| FTP (file transfer protocol) | The original ftp | File | Sends unencrypted data. |
-| FTPS (ftp over SSL/TLS) | | | |
-| SFTP (ftp over ssh) | | | |
-| SCP (secure copy protocol) | Network protocol that supports file transfers. | File |  |
-| HTTP & HTTPS | | | |
-| AS2, AS3, AS4 | | | |
-| SSH (secure socket shell) | Network protocol that provides means of encrypted communcations between your PC and a server. Used for remote login and command-line execution. | | |
-| RTSP | | Videos | |
+To find out my IP, run `ip r` in bash terminal or `ipconfig` in Powershell. Your IP will be the one after "src".
 
+## File Transfer Protocols
+
+To send whatever type of file.
+
+| Protocol | Description | Notes | 
+| - | - | - |
+| FTP (file transfer protocol) | The original ftp | Sends unencrypted data. |
+| FTPS (ftp over SSL/TLS) | | |
+| SFTP (ftp over ssh) | | |
+| SCP (secure copy protocol) | Network protocol that supports file transfers. | |
+
+## Protocols to control other equipment / devices
+
+| Protocol | Description | Notes | 
+| - | - | - |
+| SSH (Secure Socket Shell) | Network protocol that provides means of encrypted communcations between your PC and a server. Used for remote login and command-line execution. | Cannot transfer files. |
+| VNC | | Examples: teamviewer, anydesk. Can transfer files. |
+
+## Protocols to send voice and data
+
+| Protocol | Description | Notes | 
+| - | - | - |
+| RTSP | Streaming | |
+| TCP/IP | Ethernet network. | |
+| HTTP | | |
+
+## Network / internet protocols
+
+| Protocol | Description | Notes | 
+| - | - | - |
+| ipv4 | Decimal system (only numbers) with 4 billion total number of combinations possible. | `192.168.100.30` |
+| ipv6 | Hexadecimal system with way more combinations. | |
+
+---
 
 **SSH**
 ```bash
