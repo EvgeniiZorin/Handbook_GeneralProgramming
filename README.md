@@ -157,7 +157,11 @@ docker attach [OPTIONS] <CONTAINER_ID>
 
 You can also create many containers from one Dockerfile using docker-compose:
 - Run the same script many times with different passable parameters / arguments;
-- Run different scripts within the same program directory that are responsible for doing different things. 
+- Run different scripts within the same program directory that are responsible for doing different things.
+
+There are two versions of "compose":
+- `docker-compose`: external plugin that requires installation
+- `docker compose`: a function of `docker`, no need to install
 
 This is what a `docker-compose.yaml` file looks like:
 ```yaml
