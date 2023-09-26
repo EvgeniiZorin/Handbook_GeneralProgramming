@@ -205,7 +205,9 @@ SOAP, REST, RPC, and others.
 
 Capas del modelo OSI.
 
-To find out my IP, run `ip r` in bash terminal or `ipconfig` in Powershell. Your IP will be the one after "src".
+## IP
+
+To find out my IP, run `ip r` in bash terminal or `ipconfig` in Powershell (or `ifconfig`). Your IP will be the one after "src".
 
 ## File Transfer Protocols
 
