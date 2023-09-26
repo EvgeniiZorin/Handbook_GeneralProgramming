@@ -12,7 +12,14 @@
 
 # Version Control Systems
 
+VCS is a system for source code management that makes the workflow of developers simpler and more robust.
 
+Examples of VCS:
+- Git: open-source, fast
+
+Examples of version control hosting services:
+- Github
+- Gitlab
 
 # Docker
 
