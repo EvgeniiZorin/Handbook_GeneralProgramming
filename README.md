@@ -1,12 +1,22 @@
 # Handbook_GeneralProgramming
 
-- [Handbook_GeneralProgramming](#handbook-generalprogramming)
+- [Handbook\_GeneralProgramming](#handbook_generalprogramming)
+- [Version Control Systems](#version-control-systems)
 - [Docker](#docker)
+  - [Dockerfile](#dockerfile)
+  - [Image](#image)
+  - [Container](#container)
+  - [docker-compose up](#docker-compose-up)
 - [API protocols](#api-protocols)
 - [Communication Protocols](#communication-protocols)
+  - [IP](#ip)
+  - [File Transfer Protocols](#file-transfer-protocols)
+  - [Protocols to control other equipment / devices](#protocols-to-control-other-equipment--devices)
+    - [SSH](#ssh)
+  - [Protocols to send voice and data](#protocols-to-send-voice-and-data)
+  - [Network / internet protocols](#network--internet-protocols)
 - [OS](#os)
-  * [Linux](#linux)
-  * [Windows](#windows)
+  - [Linux](#linux)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -240,6 +250,22 @@ To send whatever type of file.
 | - | - | - |
 | SSH (Secure Socket Shell) | Network protocol that provides means of encrypted communcations between your PC and a server. Used for remote login and command-line execution. | Cannot transfer files. |
 | VNC | | Examples: teamviewer, anydesk. Can transfer files. |
+
+### SSH
+
+**Using SSH for git clone**
+- Here's an instruction: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+- Run in bash: `ssh-keygen -t ed25519 -C "your_email@example.com"`
+  - <u>It is important to use the email you used in the github / gitlab repository from where you are trying to git clone a repository!</u>
+- When given a prompt "Enter file in which to save the key", you either just hit enter for the default option (your credentials will save to `~/.ssh`) or name the files something like `id_rsa`
+- Next prompt "Enter passphrase (empty for no passphrase)" - just hit Enter to not utilise the passphrase
+- At the end, either in `~/.ssh` or in the working directory, you will have three files:
+  - Private key in `id_rsa` - do not share with anyone
+  - Public key in `id_rsa.pub` - generally shareable
+  - `known_hosts` directory - who knows what will be there
+- Go to Gitlab / Github settings, SSH keys, add an SSH key with the key from `id_rsa.pub`
+- Then you can clone the Gitlab / Github repository with SSH and in the terminal if / when you are prompted, you can insert the SSH key from `ssh_keys.pub`
+
 
 ## Protocols to send voice and data
 
