@@ -162,6 +162,21 @@ Change the name of the last commit: `git commit --amend` -> `git push --force`
 
 Add extra commit files to previous commit: `git commit --amend --no-edit`
 
+## Editing your past commit
+
+Let's say you have a commit (5 commits ago) that you want to change. You can do it like this:
+- `git stash` - to stash unstaged changes
+- `git rebase --interactive 123a1b~` - tilde is important; the code is from your commit
+- Edit the file by deleting "pick" and writing "edit" opposite the commit that you are interested in changing
+- Now you are at that commit! Edit the desired file
+- `git add <edited file>`
+- `git commit --amend`
+- `git rebase --continue`
+  - Here you might have a merge conflict. It will ask you to edit (manually resolve the conflict in the target file), `git add <edited file>`, `git rebase --continue`
+- `git stash apply` 
+- `git push --force`
+- Done!
+
 # ???
 
 Force git pull by removing all uncommitted changes (even if staged), and then pull:
