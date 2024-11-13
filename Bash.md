@@ -19,6 +19,7 @@
   - [Directory manipulation](#directory-manipulation)
   - [ls](#ls)
   - [find](#find)
+  - [search str](#search-str)
   - [misc](#misc)
   - [pushd / popd](#pushd--popd)
 - [Standard streams](#standard-streams)
@@ -273,6 +274,21 @@ find dir1/dir2
 find -name index.html
 # ... in the specified directory and its subdirectories
 find path/here filename.html
+```
+
+## search str
+
+Search for a specific string in all the files: `grep "precision" . -R`
+
+A more complex use case: 
+
+```bash
+grep -HiRE "some string|other string"
+# switches used:
+# -H for file printing, 
+# -i for case-insensitive, 
+# -R for recursive search, 
+# -E for regex 
 ```
 
 ## misc
