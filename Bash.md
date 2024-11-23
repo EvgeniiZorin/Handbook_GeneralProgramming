@@ -221,10 +221,15 @@ cd ../.. # go back two levels
 # Create a nested directory
 mkdir -p nested1/nested2`
 
+# | Flag | Meaning |
+# | - | - | 
+# | -f, --force | Never prompt upon deleting |
 # `rm` - remove a file or directory:
 `rm file.py`
 # Delete a directory and its files
 rm -r directory_with_files
+# Delete a directory and its files without prompting (not interactively)
+rm -rf directory_with_files
 # In the current directory, interactively delete files and directories
 rm -ir *
 
