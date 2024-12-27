@@ -1,6 +1,7 @@
 # Handbook_GeneralProgramming
 
 - [Handbook\_GeneralProgramming](#handbook_generalprogramming)
+- [Programming languages classification](#programming-languages-classification)
 - [Version Control Systems](#version-control-systems)
 - [Docker](#docker)
   - [Dockerfile](#dockerfile)
@@ -19,6 +20,25 @@
   - [Linux](#linux)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+# Programming languages classification
+
+Based on how they execute commands:
+- **Procedural** programming languages:
+  - Concerned with how to perform tasks;
+  - Centered around sets of instructions that are executed sequentially;
+  - Procedural languages advantages:
+    - Precise control over program execution;
+    - Efficiency - memory usage and execution speed
+  - Examples: C, Pascal, Fortran, Python, etc.
+- **Non-procedural** (a.k.a. declarative) programming languages: 
+  - Concerned with what the task is;
+  - allow programmers to specify what they want without detailing how to achieve it, resulting in more concise code. 
+  - The programmer specifies what the program should accomplish rather than detailing how to achieve it;
+  - Advantages:
+    - Abstraction that allows to focus on the what the problem is, rather than implementation details
+    - Readability and concise code;
+  - Examples: SQL, HTML, Prolog
 
 # Version Control Systems
 
