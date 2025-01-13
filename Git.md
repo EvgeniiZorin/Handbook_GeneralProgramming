@@ -30,6 +30,9 @@ git --version
 
 ### Check flags for a given command
 git <command> -help
+
+### Check what files will be added in a command but not actually adding them
+git add 'text_transformers/*' --dry-run
 ```
 
 **A `gitignore` file**
