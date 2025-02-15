@@ -21,6 +21,9 @@ git config --list
 ### Set your name and email
 git config --global user.name "your name"
 git config --global user.email "your-email@gmail.com"
+
+### check which remote is used - https or ssh
+git remote -v
 ```
 
 Other commands:
