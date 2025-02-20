@@ -18,6 +18,7 @@
   - [Network / internet protocols](#network--internet-protocols)
 - [OS](#os)
   - [Linux](#linux)
+- [Makefile](#makefile)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -341,3 +342,28 @@ There are also some GUI applications that emulate the abovementioned functionali
 ## Linux
 
 Before installing a Linux distro, you can check available popular distros at https://distrowatch.com/ and create a bootable USB at https://rufus.ie/en/. 
+
+# Makefile
+
+The make utility is a software tool for managing and maintaining computer programs consisting many component files. The make utility automatically determines which pieces of a large program need to be recompiled, and issues commands to recompile them. • Make reads its instruction from Makefile (called the descriptor file) by default. • Makefile sets a set of rules to determine which parts of a program need to be recompile, and issues command to recompile them. • Makefile is a way of automating software building procedure and other complex tasks with dependencies. 
+
+resources from: https://www3.nd.edu/~zxu2/acms60212-40212/Makefile.pdf
+
+Basic Makefile structure:
+- A rule consists of three parts, one or more targets, zero or more dependencies, and zero or more commands in the form given below;
+- tag character for marking commands must NOT be replaced with whitespaces
+- each command in a rule is interpreted by a shell (by default bash) to be executed 
+- macros: are basically like variables to avoid repeating code and names; 
+
+```makefile
+target: dependencies
+  commands to make target
+```
+
+Commands:
+```bash
+# build all the targets and dependencies
+make
+# build just one target
+make target_name
+```
