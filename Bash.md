@@ -528,6 +528,7 @@ elapsed=$(( SECONDS - start_time )) # How many seconds have passed
 
 # Get current time
 now=$(date +"%FORMAT") # where FORMAT - different arguments
+now=$(date +'%y/%m/%d'); echo "Today is $now"
 ```
 date FORMAT arguments
 | Argument | Function |
