@@ -1080,7 +1080,7 @@ PRINTF: echo but without newline.
 
 ## FIND
 
-`Find` command is used to search directories for files. 
+`find` command is used to search directories for files. 
 
 `find` - view the file tree from the current directory. 
 
