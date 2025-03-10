@@ -239,6 +239,8 @@ rmdir empty_directory
 # `mv` - moving and renaming files or directories
 # Rename a file
 mv oldname.txt newname.txt
+# Rename a directory
+mv oldDirName newDirName
 # Move a file
 mv file.jpg target_directory
 # move file to the previous directory
