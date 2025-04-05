@@ -183,6 +183,36 @@ Let's say you have a commit (5 commits ago) that you want to change. You can do 
 - `git push --force`
 - Done!
 
+# Rebase
+
+![alt text](image.png)
+
+> Example usage: imagine you have a branch X that was marged to master recently. However, due to lack of attention, after it was merged, more commits were made to this branch X. How can you create a new branch Y and basically copy those commits from branch X to be at the start of this branch Y? 
+
+```txt
+# branch-X
+commit-1
+commit-2 -- merged to main here
+commit-3
+
+# branch-Y
+-- a new branch to which you want to rebase, so no commits
+```
+
+Actions:
+```bash
+git rebase branch-Y branch-X
+# then let's say you make a brand-new commit on this new branch
+git add .; git commit -m "commit-4"
+```
+
+After this action, your branch will look like this:
+```txt
+# branch-Y
+commit-3
+commit-4
+```
+
 # ???
 
 Force git pull by removing all uncommitted changes (even if staged), and then pull:
