@@ -2,11 +2,13 @@
 # INPUT: in current dir, file with header and N lines
 # OUTPUT: to current dir, 10 samples with randomly-sorted lines (excluding header, which stays on top) +
 # + for each, % fractions - 10%, 20%, ... 90%, 100%. 
+set -e
 printf -- "------------------------------------ \n"
 printf "Please enter the name of fitland dataset to process \n"
 printf "Example inputs: 1) Fitland-10.txt   2) Fitland-128/test_complete_07.txt \n"
 read input
 inputName=$( echo "${input%%.*}" )
+adsfklajdsfasd
 for ((i=1; i<=10; i++))
 do
 	# Create variable = name of output file with iterable from 1 to 10

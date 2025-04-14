@@ -1391,6 +1391,10 @@ Answer: run `crontab -e`, then `30 1 * * 1 /usr/bin/python3 /home/data_scientist
 
 Show location of bash: `which bash`
 
+Make the bash script stop executing subsequent line if there is an error:
+- Either add in the bash script `set -e`
+- Or run the script like this: `bash -e my_script.sh`
+
 Each bash script should start with a shebang: `#!<path_to_interpreter>`. Shebang tells how to execute the following script, with what shell
 - Normally / most oftenly, it looks like this: `#!/bin/bash`. It means that the current script should be executed using Bash shell; however, by including this shebang, you make sure that the script is run using the correct shell, regardless of the system's default shell;
 
