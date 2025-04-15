@@ -145,6 +145,24 @@ git checkout <branch_name>
 git checkout -b branch-name
 ```
 
+## Merge
+
+Select your branch. 
+
+Make edits, commit.
+
+Then:
+```bash
+# switch to main branch
+git checkout main
+# merge to main
+git merge branchName
+# delete the merged branch
+git branch -d branchName
+# purge stale branches such as `remotes/origin/branchName`
+git remote prune origin
+```
+
 # Tagging
 
 ```bash
