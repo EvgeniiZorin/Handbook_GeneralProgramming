@@ -8,7 +8,7 @@ printf "Please enter the name of fitland dataset to process \n"
 printf "Example inputs: 1) Fitland-10.txt   2) Fitland-128/test_complete_07.txt \n"
 read input
 inputName=$( echo "${input%%.*}" )
-adsfklajdsfasd
+
 for ((i=1; i<=10; i++))
 do
 	# Create variable = name of output file with iterable from 1 to 10

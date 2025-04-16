@@ -285,7 +285,9 @@ find path/here filename.html
 
 ## search str
 
-Search for a specific string in all the files: `grep "precision" . -R`
+Search for a specific string in all the files in all the directories: `grep "precision" . -R`
+
+Same but specify directories: `grep "precision" -R dirnamenumber*`
 
 A more complex use case: 
 

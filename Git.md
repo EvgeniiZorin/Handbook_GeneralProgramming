@@ -153,14 +153,13 @@ Make edits, commit.
 
 Then:
 ```bash
-# switch to main branch
+# first, update the latest changes in main
 git checkout main
+git pull
+# switch to your branch of interest
+git checkout branchName
 # merge to main
-git merge branchName
-# delete the merged branch
-git branch -d branchName
-# purge stale branches such as `remotes/origin/branchName`
-git remote prune origin
+git merge main
 ```
 
 # Tagging
