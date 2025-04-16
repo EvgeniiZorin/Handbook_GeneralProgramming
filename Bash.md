@@ -71,6 +71,7 @@
 - [Workload managers](#workload-managers)
 - [Bioinformatics commands](#bioinformatics-commands)
 - [BASH scripting](#bash-scripting)
+  - [Error handling](#error-handling)
 
 
 # Basic commands and infor
@@ -1393,10 +1394,6 @@ Answer: run `crontab -e`, then `30 1 * * 1 /usr/bin/python3 /home/data_scientist
 
 Show location of bash: `which bash`
 
-Make the bash script stop executing subsequent line if there is an error:
-- Either add in the bash script `set -e`
-- Or run the script like this: `bash -e my_script.sh`
-
 Each bash script should start with a shebang: `#!<path_to_interpreter>`. Shebang tells how to execute the following script, with what shell
 - Normally / most oftenly, it looks like this: `#!/bin/bash`. It means that the current script should be executed using Bash shell; however, by including this shebang, you make sure that the script is run using the correct shell, regardless of the system's default shell;
 
@@ -1420,3 +1417,22 @@ Print all arguments passed to the scriplt `$*`
 - Slicing a string ```echo "string1" | cut -c1-3``` 
 
 
+## Error handling
+
+**Make the bash script stop executing subsequent line if there is an error**:
+- Either add in the bash script `set -e`
+- Or run the script like this: `bash -e my_script.sh`
+
+Additionally, you can start your script like this:
+
+```bash
+#!/bin/bash
+set -e
+
+on_exit() {
+  echo "error!!!"
+}
+trap on_exit ERR
+
+# the body of the program here
+```
