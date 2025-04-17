@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#set -e
+
+on_exit () {
+	echo "error!!!"
+}
+
+#trap on_exit ERR
+
 for var in "Data-Science" "Data-Structures-and-Algorithms" "Databases" "GeneralProgramming" "Python";
 do
 	cd "Handbook_$var";
