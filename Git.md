@@ -24,6 +24,8 @@ git config --global user.email "your-email@gmail.com"
 
 ### check which remote is used - https or ssh
 git remote -v
+### If you want to change the remote, e.g. from https to ssh:
+git remote set-url origin <ssh url>
 ```
 
 Other commands:
