@@ -162,6 +162,9 @@ git pull
 git checkout branchName
 # merge to main
 git merge main
+# if you have merge conflict (which you will be clearly communicated about :)), go to the indicated file, edit the change you want and delete the unwated changes, save the file, then add and commit
+git add conflict_file.txt
+git commit -m "merge conflict resolving"
 ```
 
 # Tagging
