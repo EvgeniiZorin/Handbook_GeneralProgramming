@@ -475,6 +475,11 @@ To permanently assign an environmental variable, perform the following steps:
 - At the bottom of the file, add the following line: `export NAME="value"`
 - Subsequently, update the .bashrc file: `source .bashrc`
 
+Another way to do the operation described above is by echo and append: 
+```bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+```
+
 # Data Types
 
 ## String
