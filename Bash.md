@@ -282,6 +282,10 @@ find dir1/dir2
 find -name index.html
 # ... in the specified directory and its subdirectories
 find path/here filename.html
+
+# search for a file recursively
+find . -name ".sqlfluff"
+# you can add flag -i for case-insensitive search, like `-iname`
 ```
 
 ## search str
@@ -1145,6 +1149,8 @@ grep 'dog[a-z]* | woof[a-z]*'
 grep -r 'string1' directory1
 # Search for a string in the current directory
 grep -r 'string1' .
+# same but case-insensitive and check 2 lines before and 2 lines after the match
+grep -ri -B 2 -A 2 "unittest" .
 
 # Save to another file all lines from the original file that do not match the pattern
 cat conda-env1.yml | grep -vE "pywin32|vs2015_runtime|- vc=" > conda-env2.yml
