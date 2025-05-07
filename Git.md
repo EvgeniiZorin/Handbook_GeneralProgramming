@@ -149,6 +149,8 @@ git checkout -b branch-name
 
 ## Merge
 
+> Note: the approach below is also how you identify the merge conflicts.
+
 Select your branch. 
 
 Make edits, commit.
@@ -156,7 +158,7 @@ Make edits, commit.
 Then:
 ```bash
 # first, update the latest changes in main
-git checkout main
+git checkout main # note: if it tells you that you have local changes, e.g. `error: Your local changes to the following files would be overwritten by checkout", just do git stash
 git pull
 # switch to your branch of interest
 git checkout branchName
