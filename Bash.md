@@ -1149,7 +1149,7 @@ grep 'dog[a-z]* | woof[a-z]*'
 grep -r 'string1' directory1
 # Search for a string in the current directory
 grep -r 'string1' .
-# same but case-insensitive and check 2 lines before and 2 lines after the match
+# same but case-insensitive and check 2 lines before and 2 lines after the match; also don't show binary file matches
 grep -ri -B 2 -A 2 "unittest" .
 
 # Save to another file all lines from the original file that do not match the pattern
