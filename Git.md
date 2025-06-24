@@ -157,6 +157,7 @@ Make edits, commit.
 
 Then:
 ```bash
+# NOTE: for all commands below, it can be `main` or `dev`, depending on your organisation
 # first, update the latest changes in main
 git checkout main # note: if it tells you that you have local changes, e.g. `error: Your local changes to the following files would be overwritten by checkout", just do git stash
 git pull
@@ -164,7 +165,8 @@ git pull
 git checkout branchName
 # merge to main
 git merge main
-# if you have merge conflict (which you will be clearly communicated about :)), go to the indicated file, edit the change you want and delete the unwated changes, save the file, then add and commit
+# if you have merge conflict (which you will be clearly communicated about :)), go to the indicated file, 
+# edit the change you want and delete the unwated changes, save the file, then add and commit
 git add conflict_file.txt
 git commit -m "merge conflict resolving"
 ```
