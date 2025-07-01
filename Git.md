@@ -38,6 +38,14 @@ git <command> -help
 
 ### Check what files will be added in a command but not actually adding them
 git add 'text_transformers/*' --dry-run
+
+### Restore file to before changes as per the state in the last commit
+git restore <filename>
+
+### Only add jupyter notebooks in the current directory
+git add *.ipynb
+### Add notebooks in the current directory or any nested dir
+git add '*.ipynb'
 ```
 
 **A `gitignore` file**

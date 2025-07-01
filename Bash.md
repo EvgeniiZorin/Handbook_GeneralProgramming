@@ -22,6 +22,7 @@
   - [search str](#search-str)
   - [misc](#misc)
   - [pushd / popd](#pushd--popd)
+  - [JSON](#json)
 - [Standard streams](#standard-streams)
 - [Permissions](#permissions)
 - [Variables](#variables)
@@ -330,7 +331,15 @@ xdg-open <http://link_here>
 
 ## pushd / popd
 
+## JSON
 
+working with json can be done with the library `jq`. 
+
+E.g. access element of json with key `q`:
+
+```bash
+<command here to get json output> | jq -r '.q'
+```
 
 # Standard streams
 
