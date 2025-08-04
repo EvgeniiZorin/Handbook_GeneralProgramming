@@ -118,6 +118,9 @@ git log
 git diff
 # myfile.py : for a specific file
 
+# Show which files have been committed in the last commit
+git show --stat --oneline -1
+
 ```
 
 # Branches
@@ -216,6 +219,29 @@ Let's say you have a commit (5 commits ago) that you want to change. You can do 
 - `git stash apply` 
 - `git push --force`
 - Done!
+
+## Removing a file from past commit
+
+Let's say you want to remove a file from the previous commit. 
+
+```bash
+# I used this command, but apparently it's deprecated 
+git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch path_to_file" HEAD
+# https://stackoverflow.com/questions/75597533/how-to-delete-the-unused-files-in-past-commits
+# so supposedly, instead of filter-branch, you have to use filter-repo
+git filter-repo --path "path/to/file" --invert-paths --force
+
+
+```
+
+
+## Revert to a previous commit
+
+Let's say you have a good commit `0a7af1e`, and you did something, merged etc., and now you have a new, undesired commit, e.g. `6282996`. This is how you hard revert to your previous commit:
+
+```bash
+git reset --hard 0a7af1e
+```
 
 # Rebase
 
