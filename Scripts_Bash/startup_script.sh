@@ -1,37 +1,50 @@
 ##!/bin/bash
+# this is to enable stop the entire script if there is an error in any line
+set -e
 
-# If you want to make this script start upon computer boot, in case of windows 10, 
-# press 'win+R', then type 'shell:startup'. 
-# This will open a folder, inside of which you can place your .sh script to run upon pc boot. 
 
-echo '
-                         __    _                                   
-                    _wr""        "-q__                             
-                 _dP                 9m_     
-               _#P                     9#_                         
-              d#@                       9#m                        
-             d##                         ###                       
-            J###                         ###L                      
-            {###K                       J###K                      
-            ]####K      ___aaa___      J####F                      
-        __gmM######_  w#P""   ""9#m  _d#####Mmw__                  
-     _g##############mZ_         __g##############m_               
-   _d####M@PPPP@@M#######Mmp gm#########@@PPP9@M####m_             
-  a###""          ,Z"#####@" `######"\g          ""M##m            
- J#@"             0L  "*##     ##@"  J#              *#K           
- #"               `#    "_gmwgm_~    dF               `#_          
-7F                 "#_   ]#####F   _dK                 JE          
-]                    *m__ ##### __g@"                   F          
-                       "PJ#####LP"                                 
- `                       0######_                      `           
-                       _0########_                                   
-     .               _d#####^#####m__              ,              
-      "*w_________am#####P"   ~9#####mw_________w*"                  
-          ""9@#####@M""           ""P@#####@M""                    
+# INTRODUCTION
+echo -e "\n> Hello, Evgenii!"
+echo -e "> Today is $(date -R)"
+sleep 1
 
-'
-echo "Greetings, human!"
-now=$(date -R); echo "Today is $now"
 
-read -n 1 -s -r -p "Press any key to exit the program"
-echo -e "\n"
+# QUOTE OF THE DAY
+echo -e "\n\n> Here's the quote to start off your day with:"
+api_quote=$(curl -X 'GET' -s https://zenquotes.io/api/random | \
+        sed 's/\[ //g' | \
+        sed 's/ \]//g')
+quote_text=$(echo $api_quote | jq -r '.q')
+quote_author=$(echo $api_quote | jq -r '.a' )
+echo "\"$quote_text\" - $quote_author"
+sleep 6
+
+
+# UPDATE GITHUB LOCAL FILES
+echo -e "\n\n> Let's update Github handbook repos that you have locally..."
+echo -e "> You have the following handbook repos on your desktop:"
+for thing in $(ls $1 | grep '^Handbook_[a-zA-Z0-9_\-]*$');
+do
+	echo -e "\n>> $thing";
+	sleep 2
+	cd "$thing";
+	dir=$(pwd)
+	echo -e "\n>>> git pull from $thing"
+	git pull
+	echo -e "\n>>> git push from $thing"
+	uncommitted_delta=$(git status)
+	if [[ $uncommitted_delta =~ "Changes not staged for commit" ]]; then
+		echo -e ">>>> Found uncommitted changes!"
+		savename="$(date +'%d.%m.%Y') update"
+		git add .
+		git commit -m "$savename"
+		git push
+	else echo -e ">>>> No uncommitted changes found.";
+	fi
+	cd ..
+done
+
+echo -e "\n> Finished! Have a great and productive day at work!\n"
+
+#echo "$savename"
+
