@@ -10,6 +10,15 @@ By default, Powershell has running scripts disabled. To enable running scripts, 
 Set-ExecutionPolicy RemoteSigned
 ```
 
+Basic commands: 
+```powershell
+# Open a directory in File Explorer based on path
+Invoke-Item -Path "C:\Users\your-username-here\AppData\Local\Programs\Python\Launcher\"
+
+# Determine the origin of a command in Powershell, i.e. where is it located
+Get-Command python
+```
+
 ## Users
 
 ```powershell
@@ -28,7 +37,10 @@ Get-LocalUser -Name "Data Science" | select *
 Get-ChildItem Env:
 # Print a specific environment variable
 echo $Env:EMAIL_USER # or $Env:EMAIL_USER
-$Env:Path # for path; even better output - `$Env:Path -split ';'`
+
+# Print all PATH variables
+$Env:Path # or `$env:Path`
+$Env:Path -split ';'
 
 # Set an env var:
 [Environment]::SetEnvironmentVariable("variable_name","variable_value","User")
