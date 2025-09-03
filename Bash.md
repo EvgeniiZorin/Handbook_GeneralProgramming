@@ -13,6 +13,7 @@
 - [Basic commands and infor](#basic-commands-and-infor)
   - [Processes](#processes)
   - [Nano](#nano)
+  - [Input](#input)
 - [Navigation](#navigation)
   - [pwd](#pwd)
   - [cd](#cd)
@@ -180,6 +181,13 @@ Information / preferences
 | `Alt+N`, `Alt+Shift+3` | Toggle line numbering on the left |
 | `Alt+P` | Toggle whitespace display |
 | `Ctrl+I` | Toggle auto indent |
+
+## Input
+
+```bash
+read Name
+echo "Welcome $Name"
+```
 
 # Navigation
 
