@@ -284,3 +284,16 @@ git pull
 ### Remove the untracked files from the Git directory
 git stash drop
 ```
+
+# .gitignore
+
+Guide for writing gitignore files: https://www.w3schools.com/git/git_ignore.asp
+
+```bash
+# Ignore all files with `.tmp` extension in `.gitignore`
+*.tmp
+# Ignore a folder and everything inside it
+temp/
+# Ignore all files within a folder
+temp/*
+```
