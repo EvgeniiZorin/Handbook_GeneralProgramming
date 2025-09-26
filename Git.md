@@ -129,16 +129,17 @@ A branch is a unique set of code changes with a unique name.
 - Each repository has one default branch (usually called `master` or `main`)
 - The branches are used to develop features isolated from each other, when you want to create a new feature or experiment with something without disturbing the main line of development. Then, if the experiment is successful, you merge the changes into the main branch, and if not, you can simply discard the branch. 
 
-Git workflow for a Data Scientist - **Feature Branch Workflow**: 
-1. **Create a new branch for your task**: If you’re about to start work on a new feature or a bug fix, it’s good practice to create a new branch. This keeps your changes organized and separate from the main branch.
+Git workflow for a Data Scientist - **Feature Branch Workflow**:
+1. **Clone the repo**: `git clone <ssh-of-the-desired-repo>`
+2. **Create a new branch for your task**: If you’re about to start work on a new feature or a bug fix, it’s good practice to create a new branch. This keeps your changes organized and separate from the main branch.
    1. Create a new branch: `git branch new-branch-name`
    2. Switch to this branch: `git checkout new-branch-name`
-2. **Add changes to the branch, commit the changes**: on this new branch, you edit your project files and do the usual process - `git add .`, `git commit -m "commit message here"`
-3. **Push your changes to the remote repository, to this specific branch: `git push origin new-branch-name`
-4. **Open a pull request**: On GitHub, you can open a pull request, which allows others to review and discuss your changes. If you’re collaborating with a team, this step is crucial for code review and collaborative debugging.
-5. **Merge your branch into the main branch**: After your changes have been approved, you can merge them into the main branch. On GitHub, this can be done with the merge button in your pull request. Locally, you would first check out to the main branch with `git checkout main` and then merge your branch with `git merge new-branch-name`.
-6. **Pull the latest changes from the main branch**: Other people might have made changes to the main branch while you were working on your feature. To make sure your local main branch is up to date, use `git pull origin main`;
-7. **Delete the branch**: `git branch -d branch-name`
+3. **Add changes to the branch, commit the changes**: on this new branch, you edit your project files and do the usual process - `git add .`, `git commit -m "commit message here"`
+4. **Push your changes to the remote repository, to this specific branch: `git push origin new-branch-name`
+5. **Open a pull request**: On GitHub, you can open a pull request, which allows others to review and discuss your changes. If you’re collaborating with a team, this step is crucial for code review and collaborative debugging.
+6. **Merge your branch into the main branch**: After your changes have been approved, you can merge them into the main branch. On GitHub, this can be done with the merge button in your pull request. Locally, you would first check out to the main branch with `git checkout main` and then merge your branch with `git merge new-branch-name`.
+7. **Pull the latest changes from the main branch**: Other people might have made changes to the main branch while you were working on your feature. To make sure your local main branch is up to date, use `git pull origin main`;
+8. **Delete the branch**: `git branch -d branch-name`
 
 Other operations:
 ```bash
