@@ -69,6 +69,8 @@ This option implies that there is already a tracked project on GitHub, perhaps b
 
 **To clone a repository from Github** (i.e. creating a local copy of a remote repository), you can use the command `git clone [ssh / https address]`. Cloning is bringing a repository hosted on Github to your local PC. You can use SSH or HTTPS, depending on which one works for you. If you already have a repository from Github, but the one on Github has changes that weren’t updated on the local PC, we can update local repo from the latest changes in Github with `git pull`.
 
+- Note: to clone with SSH, you have to create ssh key with the command like `ssh-keygen -t ed25519 -C "your.email@gmail.com"`, then you note the location (e.g. `/home/username/.ssh/id_ed25519`), specify no passphrase, and then copy public key with the cmd `cat ~/.ssh/id_ed25519.pub`; go to Github, Settings, "SSH and GPG keys", then "New SSH key", and there add the name and the public key of your created ssh key.
+
 After this step, you can make edits to your project and do the usual sequence of commands: `git add .`, `git commit -m "commit message"`, `git push`. 
 
 ## Create a local repository and link it to a remote repository on GitHub
