@@ -86,6 +86,14 @@ Steps:
    1. In the local repository, use git to set the origin of git as the remote repository on GitHub: `git remote add origin <https/url>`
    2. Push the changes to the previously set origin: `git push -u origin master` or `git push --set-upstream origin master` 
 
+## git push with https
+
+If you clone a repo with https, it won't allow you to git push with your password - rather, you'll have to use OAUTH token:
+- On github, open Settings > Developer Settings
+- Personal access tokens > Tokens (classic)
+- Generate a new token, set up a name and expiration, copy the secret oauth somewhere you can keep a secret
+- then, when you git push, you use your github username and use the oauth personal access token as password
+
 
 # Commands in-depth
 

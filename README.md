@@ -15,6 +15,7 @@
   - [Protocols to control other equipment / devices](#protocols-to-control-other-equipment--devices)
     - [SSH](#ssh)
   - [Protocols to send voice and data](#protocols-to-send-voice-and-data)
+    - [HTTP](#http)
   - [Network / internet protocols](#network--internet-protocols)
 - [OS](#os)
   - [Linux](#linux)
@@ -248,7 +249,7 @@ SOAP, REST, RPC, and others.
 
 # Communication Protocols
 
-Capas del modelo OSI.
+Essentially describes how data travels through the internet. 
 
 ## IP
 
@@ -264,6 +265,10 @@ To send whatever type of file.
 | FTPS (ftp over SSL/TLS) | | |
 | SFTP (ftp over ssh) | | |
 | SCP (secure copy protocol) | Network protocol that supports file transfers. | |
+
+FTP: uses the client-server model. Lacks encryption. 
+
+FTPS, SFTP: uses encryption
 
 ## Protocols to control other equipment / devices
 
@@ -294,7 +299,26 @@ To send whatever type of file.
 | - | - | - |
 | RTSP | Streaming | |
 | TCP/IP | Ethernet network. | |
-| HTTP | | |
+| HTTP | HTTP is the de-facto communication protocol used by web APIs. | |
+
+### HTTP
+
+Hypertext Transfer Protocol (HTTP): this protocol follows the client-server model, where the client communicates with the servers by sending requests and waiting for responses.
+
+HTTP request method values (HTTP verbs):
+- GET
+  - Simple requests for information that should only retrieve data, without modifying it.
+- POST
+  - Modify the underlying data, or create a new resource.
+- PUT
+  - Modify data, but instead of creating new resource, we update the existing ones.
+- DELETE
+- HEAD
+- PATCH
+- OPTIONS
+- TRACE
+
+HTTPS is secure HTTP (HTTP Secure). Ensures that the communication between the client and server is encrypted and secure. 
 
 ## Network / internet protocols
 

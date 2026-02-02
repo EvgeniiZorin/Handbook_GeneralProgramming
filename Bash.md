@@ -1322,12 +1322,14 @@ wc -l < file.txt # returns only the number
 
 ## WGET
 
-Downloads files. 
+Downloads files: `wget <link>`
 
-```wget <link>```
+Examples:
 
-Flags:
-- Save the file in a certain name: `-O filename.txt`
+```bash
+# Download the file with specified name or location
+wget -O data/input/file.csv https://address-here.com/file.csv
+```
 
 
 ## XARGS
