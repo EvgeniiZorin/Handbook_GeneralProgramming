@@ -320,6 +320,15 @@ HTTP request method values (HTTP verbs):
 
 HTTPS is secure HTTP (HTTP Secure). Ensures that the communication between the client and server is encrypted and secure. 
 
+HTTP status codes:
+
+| Code | Status | 
+| - | - |
+| 20x | success |
+| 30x | redirect |
+| 40x | client errors (e.g. permission errors) |
+| 50x | server errors (e.g. if the website crashed) |
+
 ## Network / internet protocols
 
 | Protocol | Description | Notes | 
