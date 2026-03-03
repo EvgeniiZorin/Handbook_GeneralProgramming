@@ -329,6 +329,11 @@ HTTP status codes:
 | 40x | client errors (e.g. permission errors) |
 | 50x | server errors (e.g. if the website crashed) |
 
+500 codes:
+| Code | Status |
+| - | - |
+| 500 | Generic HTTP status code; the server encountered an unexpected condition that prevented it from fulfilling the request. |
+
 ## Network / internet protocols
 
 | Protocol | Description | Notes | 
