@@ -242,6 +242,8 @@ rm -r directory_with_files
 rm -rf directory_with_files
 # In the current directory, interactively delete files and directories
 rm -ir *
+# Remove files based on regex
+rm *.txt
 
 # `rmdir` - remove an empty directory:
 rmdir empty_directory
