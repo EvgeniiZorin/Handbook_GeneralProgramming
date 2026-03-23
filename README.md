@@ -27,20 +27,24 @@
 
 Based on how they execute commands:
 - **Procedural** programming languages:
-  - Concerned with how to perform tasks;
+  - a.k.a. imperative languages
+  - Concerned with **how** to perform tasks;
   - Centered around sets of instructions that are executed sequentially;
   - Procedural languages advantages:
     - Precise control over program execution;
     - Efficiency - memory usage and execution speed
   - Examples: C, Pascal, Fortran, Python, etc.
 - **Non-procedural** (a.k.a. declarative) programming languages: 
-  - Concerned with what the task is;
+  - a.k.a. declarative / functional languages
+  - Concerned with **what result you want to achieve**, without specifying the steps;
   - allow programmers to specify what they want without detailing how to achieve it, resulting in more concise code. 
-  - The programmer specifies what the program should accomplish rather than detailing how to achieve it;
+  - The programmer specifies what the program should accomplish rather than detailing how to achieve it; this means, an underlying engine will get the specified result, while optimising the exact order of operations to maximally optimise the execution; 
+  - The steps are executed non-sequentially (depending on the engine);
+  - This also means that you cannot write full programs (you cannot just program anything you want) - you will have to combine it with a procedural language, e.g. python.
   - Advantages:
     - Abstraction that allows to focus on the what the problem is, rather than implementation details
     - Readability and concise code;
-  - Examples: SQL, HTML, Prolog
+  - Examples: SQL, HTML, Prolog, CSS
 
 # Version Control Systems
 
