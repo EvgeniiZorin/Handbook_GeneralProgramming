@@ -2,6 +2,7 @@
 
 - [Handbook\_GeneralProgramming](#handbook_generalprogramming)
 - [Programming languages classification](#programming-languages-classification)
+- [Character encoding](#character-encoding)
 - [Version Control Systems](#version-control-systems)
 - [Docker](#docker)
   - [Dockerfile](#dockerfile)
@@ -45,6 +46,24 @@ Based on how they execute commands:
     - Abstraction that allows to focus on the what the problem is, rather than implementation details
     - Readability and concise code;
   - Examples: SQL, HTML, Prolog, CSS
+
+# Character encoding
+
+Character encodings - systems that map characters (letters, digits, punctuation marks, emoji, etc.) to numbers that computers can operate with.
+
+Encodings:
+- **ASCII** (American Standard Code for Information Enterchange): 
+  - the oldest widely used character encoding, created in 1960s.
+  - Uses 7 bits to represent 128 characters, which include A-Z and a-z, digits 0-9, basic punctuation, 33 control characters (e.g. newline, carriage return, tab)
+  - Does not include accented letters, emoji, or non-Latin languages, cyrillic, arabic, chinese.
+- **UTF-8** (Unicode Transformation Format - 8-bit):
+  - Variable-length Unicode encoding that can represent every character in every language
+  - Features:
+    - Backward compatible with ASCII (characters 0-127) - so any ascii text is valid utf-8
+    - Works for all languages
+    - Default encoeding for the web (99% of webpages)
+
+Unicode is the list of all characters; a giant list assigning a unique numeric code point to every character in all writing systems. 
 
 # Version Control Systems
 
