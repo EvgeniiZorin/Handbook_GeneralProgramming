@@ -191,6 +191,24 @@ git add conflict_file.txt
 git commit -m "merge conflict resolving"
 ```
 
+## Merge vs rebase
+
+**Merge**
+
+- Let's say you have created a branch for the purpose of developing a feature. When you want to bring those changes back to master, you want to **merge**
+  
+**Rebase**
+
+- You started doing some development and then another developer made an unrelated change in another branch and merged it to main. You probably want to pull and then rebase to base your changes from the current version from the repository. 
+
+Pipeline:
+```bash
+git checkout main
+git pull
+git checkout my_branch
+git rebase main
+```
+
 # Tagging
 
 ```bash
