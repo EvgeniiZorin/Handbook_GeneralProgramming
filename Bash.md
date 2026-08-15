@@ -854,6 +854,21 @@ file -bi file.txt
 iconv -f utf-16le -t UTF-8 file.txt -o file_proc.txt
 ```
 
+**Percent encoding (URL encoding)**: % sign followed by two hexadecimal digits. Modern web standards convert characters into their respective UTF-8 byte sequences first, and then percent-encode each resulting byte. For example, a space becomes %20, and a non-ASCII character like é turns into %C3%A9.
+
+How UTF-8 Percent-Encoding Works:
+- ASCII Letters & Numbers: Characters like A-Z, a-z, and 0-9 stay unchanged.
+- Safe Characters: Symbols like hyphens (-), underscores (_), tildes (~), and periods (.) do not need encoding.
+- Spaces: Standard URLs convert spaces to %20, while HTML form data (application/x-www-form-urlencoded) often uses a plus sign (+).
+- Non-ASCII / Special Characters: The character is split into its raw UTF-8 byte values, and every individual byte is prefixed with a percent sign
+
+Original: `hola héroe`
+
+Encoded: `hola%20h%C3%A9roe`
+
+- space is encoded as: `%20h`
+- `é` is encoded as: `%C3%A9`
+
 # Main commands
 
 Get all commands: `help`

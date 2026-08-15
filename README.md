@@ -45,7 +45,8 @@ Based on how they execute commands:
   - Advantages:
     - Abstraction that allows to focus on the what the problem is, rather than implementation details
     - Readability and concise code;
-  - Examples: SQL, HTML, Prolog, CSS
+  - Examples: SQL, HTML, Prolog, CSS;
+    - Some languages, e.g. BigQuery SQL, incorporates procedural language semantics
 
 # Character encoding
 
