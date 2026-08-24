@@ -18,6 +18,8 @@
   - [Protocols to send voice and data](#protocols-to-send-voice-and-data)
     - [HTTP](#http)
   - [Network / internet protocols](#network--internet-protocols)
+- [Communication frameworks](#communication-frameworks)
+  - [COM](#com)
 - [OS](#os)
   - [Linux](#linux)
 - [Makefile](#makefile)
@@ -398,6 +400,54 @@ There are also some GUI applications that emulate the abovementioned functionali
 | WinSCP | WinSCP free, open-source SCP, SFTP, FTP for Windows. | Just login using info of remote machine (IP, username, and pw), and now you can transfer files between your local machine and the remote machine. |
 | FileZilla | Like WinSCP but for macOS | |
 
+# Communication frameworks
+
+## COM
+
+COM Automation is a Windows object model and interprocess communication technology that applications can expose as an API.
+
+> Only available for Windows
+
+What COM API does:
+- Runs inside Windows;
+- Calls local application;
+- Advantages over other apis for e.g. excel: can refresh power query, run VBA macros, create and update pivot tables, export to PDF, trigger calculation engine, control charts and slicers.
+
+Applications with support for COM:
+- Microsoft applications with strong COM support:
+  - Excel
+  - Word
+  - Outlook
+  - PowerPoint
+  - Access
+  - Visio
+  - Project
+- Non-microsoft applications:
+  - AutoCAD
+  - SolidWorks
+  - SAP GUI
+  - Adobe Acrobat
+  - Internet Explorer
+  - MATLABG
+
+
+COM contains various communication mechanisms as part of it.
+
+Example in python:
+```py
+import win32com.client
+
+excel = win32com.client.Dispatch("Excel.Application")
+excel.Visible = True
+
+wb = excel.Workbooks.Open(r"C:\temp\file.xlsx")
+ws = wb.Worksheets("Sheet1")
+
+ws.Cells(1, 1).Value = "Hello"
+wb.Save()
+
+excel.Quit()
+```
 
 # OS
 
