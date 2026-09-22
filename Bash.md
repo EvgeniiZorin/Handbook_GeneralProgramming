@@ -351,6 +351,18 @@ E.g. access element of json with key `q`:
 <command here to get json output> | jq -r '.q'
 ```
 
+Examples:
+```bash
+# Just pretty print string with data in json format
+echo '[{"a": "whatever here"}, {"b": "something else here"}]' | jq
+# get the first element
+jq .[0]
+# basically get everything inside of square brackets
+jq .[]
+# print contents of "a"
+jq '.[].a'
+```
+
 # Standard streams
 
 One of the most important features in bash is **piping**, which sends command output to other commands. For example, 

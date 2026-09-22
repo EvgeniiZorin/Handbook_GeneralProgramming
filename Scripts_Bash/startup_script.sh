@@ -14,8 +14,8 @@ echo -e "\n\n> Here's the quote to start off your day with:"
 api_quote=$(curl -X 'GET' -s https://zenquotes.io/api/random | \
         sed 's/\[ //g' | \
         sed 's/ \]//g')
-quote_text=$(echo $api_quote | jq -r '.q')
-quote_author=$(echo $api_quote | jq -r '.a' )
+quote_text=$(echo $api_quote | jq -r '.[].q')
+quote_author=$(echo $api_quote | jq -r '.[].a' )
 echo "\"$quote_text\" - $quote_author"
 sleep 6
 
