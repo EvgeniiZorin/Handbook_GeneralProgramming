@@ -462,7 +462,7 @@ Environment variables:
 | - | - |
 | Print all | `printenv`, `env` |
 | Print a specific one | `echo $NAME`, `printenv NAME` |
-| Permanently set an env var | `nano ~/.bashrc`, then add the var value at the end: `export VAR_NAME="value"`, finally update the .bashrc file using the command: `source .bashrc` |
+| Permanently set an env var | `nano ~/.bashrc`, then add the var value at the end: `export VAR_NAME="value"`, finally update the .bashrc file using the command: `source ~/.bashrc` |
 
 
 ```bash
